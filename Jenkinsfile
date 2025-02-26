@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main' url: 'https://github.com/Alvaade/TrainingSessionTracker.git'
+                git branch: 'main', url: 'https://github.com/Alvaade/TrainingSessionTracker.git'
             }
         }
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
     }
